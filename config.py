@@ -1,0 +1,20 @@
+from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
+
+# Model parameters
+PARAMETERS = {
+    GenParams.DECODING_METHOD: "greedy",
+    GenParams.MAX_NEW_TOKENS: 256,
+}
+
+# watsonx credentials
+# Note: Normally we'd need an API key, but in Skill's Network Cloud IDE will automatically handle that for you.
+CREDENTIALS = {
+    "url": "https://eu-de.ml.cloud.ibm.com",
+    "api_key": "ECkcwYkzynTyIfHI7hSgxL-2-QyVDhMEVCLo3OMBEATk",
+    "project_id": "06881b66-454b-4f5a-8376-026d644e23df"
+}
+
+# Model IDs
+#LLAMA_MODEL_ID = "meta-llama/llama-3-2-11b-vision-instruct"
+GRANITE_MODEL_ID = "ibm/granite-4-h-small"
+MISTRAL_MODEL_ID = "mistralai/mistral-small-3-1-24b-instruct-2503"
