@@ -5,6 +5,11 @@ from langchain_core.output_parsers import JsonOutputParser
 from pydantic import BaseModel, Field
 from config import PARAMETERS, CREDENTIALS, GRANITE_MODEL_ID, MISTRAL_MODEL_ID
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Define JSON output structure
 class AIResponse(BaseModel): 
     summary: str = Field(description="Summary of the user's message") 
@@ -20,8 +25,8 @@ def initialize_model(model_id):
     return ChatWatsonx(
         model_id=model_id,
         url = "https://eu-de.ml.cloud.ibm.com",  
-        api_key = "ECkcwYkzynTyIfHI7hSgxL-2-QyVDhMEVCLo3OMBEATk",
-        project_id = "06881b66-454b-4f5a-8376-026d644e23df",
+        api_key = os.getenv("api_key"),
+        project_id = os.getenv("project_id"),
         params=PARAMETERS
     )
 

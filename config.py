@@ -1,3 +1,7 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from ibm_watsonx_ai.metanames import GenTextParamsMetaNames as GenParams
 
 # Model parameters
@@ -10,8 +14,8 @@ PARAMETERS = {
 # Note: Normally we'd need an API key, but in Skill's Network Cloud IDE will automatically handle that for you.
 CREDENTIALS = {
     "url": "https://eu-de.ml.cloud.ibm.com",
-    "api_key": "ECkcwYkzynTyIfHI7hSgxL-2-QyVDhMEVCLo3OMBEATk",
-    "project_id": "06881b66-454b-4f5a-8376-026d644e23df"
+    "api_key": os.getenv("api_key"),
+    "project_id": os.getenv("project_id")
 }
 
 # Model IDs
